@@ -34,5 +34,20 @@
   <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+    <script>
+    function github_cdn()
+    {
+      for(i=0;i<document.getElementsByTagName("img").length;i++)
+      {
+        if(document.getElementsByTagName("img")[i]["src"].toString().indexOf('raw.githubusercontent.com') >= 0)
+        {
+          //console.log(document.getElementsByTagName("img")[i]["src"]); //输出该页面的所有链接。
+          document.getElementsByTagName("img")[i].src=document.getElementsByTagName("img")[i]["src"].replace('raw.githubusercontent.com','rawgithub.tim-wcx.workers.dev');//raw.sevencdn.com
+          //console.log(document.getElementsByTagName("img")[i]["src"]); //输出该页面的所有链接。
+        }
+      }
+    }
+    setInterval(github_cdn, 1000);
+  </script>
 </body>
 </html>
