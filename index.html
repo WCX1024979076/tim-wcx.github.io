@@ -77,11 +77,6 @@
                 '<span id="my_html">' + HTMLEncode(code) + '</span>'
               );
             }
-            if (lang == "my_script") {
-              return (
-                '<span id="my_script">' + HTMLEncode(code) + '</span>'
-              );
-            }
             return this.origin.code.apply(this, arguments);
           }
         }
@@ -127,7 +122,6 @@
   <script>
     function github_cdn() {
       $("#my_html").replaceWith($($("#my_html").text()));
-      $("#my_script").replaceWith($($("#my_script").text()));
       MathJax.Hub.Queue(["Typeset", MathJax.Hub, "body"]);
       for (i = 0; i < document.getElementsByTagName("img").length; i++) {
         if (document.getElementsByTagName("img")[i]["src"].toString().indexOf('raw.githubusercontent.com') >= 0) {
