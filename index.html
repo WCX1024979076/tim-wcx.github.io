@@ -70,7 +70,7 @@
             }
             if (lang == "my_html") {
               return (
-                '<span id="my_html">' + HTMLEncode(code) + '</span>'
+                '<span id="my_html" style="display:none" >' + HTMLEncode(code) + '</span>'
               );
             }
             return this.origin.code.apply(this, arguments);
@@ -125,7 +125,7 @@
         }
       }
     }
-    setInterval(github_cdn, 1000);
+    setInterval(github_cdn, 500);
   </script>
 </body>
 
