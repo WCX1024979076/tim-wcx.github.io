@@ -74,12 +74,11 @@
                 }) + '</span>'
               );
             }
-            if (lang == "my_html") {
-              return (
-                '<span id="my_html" style="display:none" >' + HTMLEncode(code) + '</span>'
-              );
-            }
             return this.origin.code.apply(this, arguments);
+          },
+          html : function (html)
+          {
+            return '<span id="my_html" style="display:none" >' + HTMLEncode(html) + '</span>' 
           }
         }
       },
