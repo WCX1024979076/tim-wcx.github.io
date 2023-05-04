@@ -121,16 +121,11 @@
   <script src="https://fastly.jsdelivr.net/npm/docsify-valine/dist/docsify-valine.min.js"></script>
   <script src="https://fastly.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript"> </script>
   <script>
-    function github_cdn() {
+    function mathjax_fun() {
       $(".my_html").each(function(){$(this).replaceWith($($(this).text()));})
       MathJax.Hub.Queue(["Typeset", MathJax.Hub, "body"]);
-      for (i = 0; i < document.getElementsByTagName("img").length; i++) {
-        if (document.getElementsByTagName("img")[i]["src"].toString().indexOf('raw.githubusercontent.com') >= 0) {
-          document.getElementsByTagName("img")[i].src = document.getElementsByTagName("img")[i]["src"].replace('raw.githubusercontent.com', 'rawgithub.tim-wcx.workers.dev');//raw.sevencdn.com
-        }
-      }
     }
-    setInterval(github_cdn, 500);
+    setInterval(mathjax_fun, 500);
   </script>
 </body>
 
